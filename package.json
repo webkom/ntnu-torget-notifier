@@ -4,7 +4,10 @@
   "main": "main.js",
   "license": "MIT",
   "dependencies": {
-    "puppeteer": "^2.1.0",
+    "puppeteer": "12.0.0",
     "slack-notify": "^0.1.7"
+  },
+  "prettier": {
+    "singleQuote": true
   }
 }
