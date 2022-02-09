@@ -1,0 +1,22 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: docker
+    image: plugins/docker
+    when:
+      branch:
+        - master
+      event: push
+      status: success
+    settings:
+      registry: https://registry.webkom.dev
+      repo: registry.webkom.dev/webkom/ntn
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      tags:
+        - latest
